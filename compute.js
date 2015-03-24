@@ -6,7 +6,15 @@ $(document).ready(function(){
 	  var nav = Number($("nobr:contains('Closing Balance')").parent().next().attr('uv'));
 	  var currentValue = (units*nav).toFixed(2);
 	  if (!isNaN(currentValue)) {
-	    $(this).append("<b> - "+currentValue+"</b>");
+		  if (currentValue < Number($(this).attr('uv'))) {
+		    $(this).append('<strong style="color:red"> - '+currentValue+'</strong>');	
+		  }
+		  else if (currentValue > Number($(this).attr('uv'))) {
+		    $(this).append('<strong style="color:green"> - '+currentValue+'</strong>');	
+		  }
+		  else {
+		  	$(this).append("<strong> - "+currentValue+"</strong>");	
+		  }
 	    investTotal = investTotal + Number($(this).attr('uv'));
 		currentTotal = currentTotal + Number(currentValue);	
       }
