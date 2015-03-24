@@ -3,7 +3,7 @@
 
   "name": "FundzMagic Present Value",
   "description": "Appends present value of each investment you have done",
-  "version": "1.3",
+  "version": "1.4",
 
   "permissions": [
     "http://*.fundzmagic.com/*"
